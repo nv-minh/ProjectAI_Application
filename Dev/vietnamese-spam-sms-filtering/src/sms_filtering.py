@@ -15,17 +15,17 @@ corpus_name = args.data_dir
 vectorize = args.vectorize
 classifier = args.classifier
 fold = int(args.fold)
-print "Loading data ..."
+print("Loading data ...")
 list_label, list_content = utils.load_corpus(corpus_name)
-print "Tagging entity ..."
+print("Tagging entity ...")
 list_content = entity_tagging(list_content)
-print "Converting document to vector ..."
+print("Converting document to vector ...")
 list_content_vec, list_label, list_len_sms, dictionary = utils.doc_2_vec(list_content, list_label, vectorize)
-print "Classifying..."
+print("Classifying...")
 list_false_positive, list_false_negative, list_true_positive, list_true_negative = \
     utils.kfold_classification(list_content, list_content_vec, list_label, classifier, fold)
-print "Evaluating..."
+print("Evaluating...")
 utils.evaluation(list_false_positive, list_false_negative, list_true_positive, list_true_negative)
 end_time = datetime.now()
-print "Running time: "
-print (end_time - start_time)
+print("Running time: ")
+print(end_time - start_time)
