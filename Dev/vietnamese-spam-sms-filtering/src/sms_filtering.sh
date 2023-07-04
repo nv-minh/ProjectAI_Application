@@ -1,1 +1,0 @@
-python sms_filtering.py --data_dir data_sample --vectorize bow --classifier svm --fold 5

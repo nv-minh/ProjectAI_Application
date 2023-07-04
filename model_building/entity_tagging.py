@@ -91,56 +91,6 @@ emoticon_pattern.append(r'=\(')
 stop_list = ['.', ',', '/', '?', ';', ':', '&', '@', '!', '`', "'", '"', '>', '<', '*', '%', '#', '(', ')', '[', ']',
              '-', '_', '=', '+', '{', '}', '~', '$', '^', '*', '|', '\\']
 
-# reader = codecs.open('corpus.txt', 'r', 'utf8')
-# writer = codecs.open('res.txt', 'w', 'utf8')
-#
-# for line in reader.readlines():
-#     line = line.strip()
-#     temp = line.split('\t')
-#     label = temp[0]
-#     line = temp[1]
-#     sentence = ''
-#     for word in line.split(' '):
-#         for date_pat in date_pattern:
-#             word = re.sub(date_pat, date_string, word)
-#         for currency_pat in currency_pattern:
-#             word = re.sub(currency_pat, currency_string, word)
-#         for phone_pat in phone_pattern:
-#             word = re.sub(phone_pat, phone_string, word)
-#         for link_pat in link_pattern:
-#             word = re.sub(link_pat, link_string, word)
-#         for emoticon_pat in emoticon_pattern:
-#             word = re.sub(emoticon_pat, emoticon_string, word)
-#         sentence += word + ' '
-#     writer.write(label + '\t' + sentence.strip() + '\n')
-# reader.close()
-# writer.close()
-#
-# f1 = codecs.open('res.txt', 'r', 'utf-8')
-# f2 = codecs.open('corpus_train.txt', 'w', 'utf-8')
-# list_label = []
-# list_content = []
-# for line in f1:
-#     line = line.split('\t')
-#     list_label.append(line[0])
-#     temp = line[1]
-#     stop_list = ['.', ',', '/', '?', ';', ':', '&', '@', '!', '`', "'", '"', '>', '<', '*', '%', '#', '(', ')', '[',
-#                  ']', '-', '_', '=', '+', '{', '}', '~', '$', '^', '*', '|', '\\']
-#     for item in stop_list:
-#         temp = temp.replace(item, ' ')
-#     list_content.append(temp.strip('\n').lower())
-# count = 0
-# for line in list_content:
-#     sentence = ''
-#     line = line.split()
-#     for word in line:
-#         if word.isdigit():
-#             word = ' number '
-#         sentence += word + ' '
-#     f2.write(list_label[count] + '\t' + sentence.strip() + '\n')
-#     count += 1
-# f1.close()
-# f2.close()
 
 
 def entity_tagging(corpus):

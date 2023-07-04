@@ -6,7 +6,7 @@ from datetime import datetime
 parser = argparse.ArgumentParser()
 parser.add_argument("--data_dir", help="data directory")
 parser.add_argument("--vectorize", help="vectorization method for texts: bow, tfidf")
-parser.add_argument("--classifier", help="classification method: nb, svm, dt, knn, maxent, baseline")
+parser.add_argument("--classifier", help="classification method:svm")
 parser.add_argument("--fold", help="fold number for cross-validation")
 args = parser.parse_args()
 
