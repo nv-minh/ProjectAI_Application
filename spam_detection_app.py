@@ -8,7 +8,7 @@ import pickle
 # Reads in saved classification model
 
 
-input_message = "That Tuyet Voi de So Huu CanHo Sieu CAOCAP ParkParoma Dep NHAT Vinhomes, Vi tri VANG gia Tot NHAT. Goi ngay e Long 090 282 5353 tham quan nha mau va giu cho"
+input_message = "Quy khach da su dung het dung luong o toc do cao 3G cua goi cuoc MAX. Soan tin DK MAX100 gui 888 de nang cap len goi MAX100 (1,2GB toc do cao/30 ngay, 100000/lan dang ky). Xin cam on"
 messages_raw = pd.read_excel('./message_modified_v1.2.xlsx', dtype={'msg': str})
 list_content = messages_raw['msg'].to_list()
 list_content.insert(0, input_message)

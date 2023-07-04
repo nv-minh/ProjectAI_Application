@@ -1,10 +1,6 @@
-from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import confusion_matrix
 from sklearn import preprocessing
 from sklearn import svm
-from sklearn import tree
-from sklearn import neighbors
-from sklearn import linear_model
 from sklearn.model_selection import KFold
 import codecs
 import numpy as np
@@ -94,16 +90,8 @@ def vectorize(content, vector, df_below=3, df_above=1.0, length=1):
     for i in range(len(temp_corpus_bow)):
         for item in temp_corpus_bow[i]:
             content_bow[i][item[0]] = item[1]
-    tfidf = models.TfidfModel(temp_corpus_bow)
-    temp_corpus_tfidf = tfidf[temp_corpus_bow]
-    content_tfidf = np.zeros((len(list_corpus), len(dictionary.keys())))
-    for i in range(len(temp_corpus_tfidf)):
-        for item in temp_corpus_tfidf[i]:
-            content_tfidf[i][item[0]] = item[1]
     if vector == 'bow':
         content_vec = content_bow
-    elif vector == 'tfidf':
-        content_vec = content_tfidf
     len_sms = np.asarray(len_sms)
     len_sms = np.reshape(len_sms, (len(len_sms), 1))
     if length == 1:
@@ -140,28 +128,11 @@ def evaluation(list_false_positive, list_false_negative, list_true_positive, lis
     print('True Negative Rate: ' + str(sum(list_true_negative)*20) + '%')
 
 
-def count_vocab(list_content):
-    list_vocab = []
-    list_corpus = []
-    count = 1
-    for line in list_content:
-        line = line.split()
-        list_vocab += line
-        list_corpus.append(line)
-        count += 1
-    print(len(list_vocab))
-    temp = list(set(list_vocab))
-    print(len(temp))
-    dictionary = corpora.Dictionary(list_corpus)
-    print(dictionary)
-    return temp, list_corpus
-
-
 def classification(content_test, content_vec_train, content_vec_test, label_train, label_test, classifier, vectorize_method):
     if classifier == 'svm':
         clf = build_classifier_svm(content_vec_train, label_train)
-        # if vectorize_method == 'bow':
-        #     pickle.dump(clf, open(r'C:\KhoiNXM\Spam message Vietnamese\Dev\vietnamese-spam-sms-filtering\models\bow_svm_clf.pkl', 'wb'))
+        if vectorize_method == 'bow':
+            pickle.dump(clf, open(r'C:\Users\MINH.NV193012\Desktop\20222\Spam_detection_heroku_app\bow_svm_clf.pkl', 'wb'))
         matrix = classifying_svm(content_test, content_vec_test, clf, label_test)
     false_positive = matrix[1, 0] / float(sum(matrix[1]))
     false_negative = matrix[0, 1] / float(sum(matrix[0]))
