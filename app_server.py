@@ -1,4 +1,6 @@
-from flask import Flask, request
+import flask
+import pickle
+from flask import Flask, request, jsonify
 from sklearn.feature_extraction.text import CountVectorizer
 import joblib
 
@@ -7,9 +9,8 @@ app = Flask(__name__)
 
 def predict_spam_or_ham(input_string):
     # Load the trained model and CountVectorizer
-    print(input_string)
-    naive_bayes = joblib.load('naive_bayes_model.pkl')
-    count_vectorizer = joblib.load('count_vectorizer.pkl')
+    naive_bayes = joblib.load('./naive_bayes_model.pkl')
+    count_vectorizer = joblib.load('./count_vectorizer.pkl')
     # Preprocess the input string
     preprocessed_input = count_vectorizer.transform([input_string])
     # Make the prediction
@@ -20,13 +21,15 @@ def predict_spam_or_ham(input_string):
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        input_ = request.form['cmt']
-    prediction = predict_spam_or_ham(input_)
-    if prediction == 0:
-        label = "ham"
-    else:
-        label = "spam"
-    return label
+        data = request.get_json()
+        input_ = data['input_string']
+        prediction = predict_spam_or_ham(input_)
+        if prediction == 0:
+            label = "ham"
+        else:
+            label = "spam"
+        response = {'prediction': label}
+        return jsonify(response)
 
 
 if __name__ == '__main__':
