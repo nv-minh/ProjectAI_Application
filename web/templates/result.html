@@ -129,7 +129,7 @@ input[type=text]:focus {
 <div class="center">
     <div style="font-family:Tahoma; font-size: 22px; text-align: center;"><b>Trí tuệ nhân tạo và ứng dụng</b> </div>
     <div style="height: 10px;"></div>
-    <div style="font-family:Tahoma; font-size: 15px; text-align: center; height: 40px">Đề tài: Phân tích sms sentimental
+    <div style="font-family:Tahoma; font-size: 15px; text-align: center; height: 40px">Đề tài: Phân tích comment spam
     </div>
 
     <div class="row" style="font-family:Tahoma; font-size: 12px;">
@@ -140,18 +140,16 @@ input[type=text]:focus {
         <div class="column1">
             <div style="height: 20px">Phạm Doãn Tĩnh</div>
             <div style="height: 20px">Ngô Văn Minh</div>
+            <div style="height: 20px">Tùng</div>
+            <div style="height: 20px">Mạnh</div>
+            <div style="height: 20px">Hải</div>
+            <div style="height: 20px">Hùng</div>
             <div style="height: 20px"></div>
             <div style="height: 20px"></div>
             <div style="height: 20px"></div>
         
         </div>
     </div>
-
-
-
-
-
-
     <div class="row" style="font-family:Tahoma;">
         <div class="column">
             <div style="text-align: center; font-family:Tahoma; font-size: 15px;"><b>Input</b></div>
@@ -169,13 +167,7 @@ input[type=text]:focus {
                         <div style="text-align: center; font-size: 15px"><b>{{ c }}</b></div>
                     </div>
                     <div style="align-items: center;">
-                        <!-- <button class="button" type="submit" value="Submit" style="vertical-align:middle; ">
-                            <span>
-                                A
-                            </span>
-                        </button>   -->
                     </div>
-                    
                 </form>
             </div>
         </div>
@@ -184,15 +176,8 @@ input[type=text]:focus {
             <div style="height: 35px"></div>
             <div style="text-align: center; font-size: 20px;}"><b>{{ prediction }}</b></div>
             <div style="height: 8px"></div>
-            <div style="text-align: center; font-size: 12px">Mức độ chắc chắn: <b style="font-size: 20px">{{ p }}%</b></div>
-
             <div style="padding-left: 50px">
-                
                 <div style="height: 16px"></div>
-                
-                <div style="font-size: 12px">Mức độ tích cực: <b>{{ pos }}</b></div>
-                <div style="height: 8px"></div>
-                <div style="font-size: 12px">Mức độ tiêu cực: <b>{{ neg }}</b></div>
             </div>
             <div style="height: 8px"></div>
             <button class="button" style="background-color: green" onclick="goBack()">Kiểm tra bình luận khác</button>
@@ -205,10 +190,6 @@ input[type=text]:focus {
             
         </div>
     </div>
-
-
-
 </div>
-
 </body>
 </html>

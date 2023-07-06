@@ -18,119 +18,115 @@
 </html> -->
 
 
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 5px;
-  height: 220px; /* Should be removed. Only for demonstration */
-}
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+            height: 220px; /* Should be removed. Only for demonstration */
+        }
 
-.column1 {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: auto; /* Should be removed. Only for demonstration */
-}
-
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-  margin:auto;
-}
-
-.center {
-  margin: auto;
-  width: 70%;
-  border: 1px solid #fff;
-  padding: 20px;
-  background-color: #f7f7f7
-}
-input[type=text] {
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 12px;
-  background-color: white;
-  background-image: url('bk.jpg');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 12px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus {
-  width: 100%;
-}
+        .column1 {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: auto; /* Should be removed. Only for demonstration */
+        }
 
 
-.button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: green;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 12px;
-  padding: 10px;
-  width: 100%;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 0px;
-}
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            margin: auto;
+        }
 
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
+        .center {
+            margin: auto;
+            width: 70%;
+            border: 1px solid #fff;
+            padding: 20px;
+            background-color: #f7f7f7
+        }
 
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -10px;
-  transition: 0.5s;
-}
+        input[type=text] {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 12px;
+            background-color: white;
+            background-image: url('bk.jpg');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 12px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
 
-.button:hover span {
-  padding-right: 25px;
-}
+        input[type=text]:focus {
+            width: 100%;
+        }
 
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-</style>
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: green;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 12px;
+            padding: 10px;
+            width: 100%;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 0px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -10px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
 </head>
 <body>
 
 
-
 <div class="center">
-    <div style="font-family:Tahoma; font-size: 22px; text-align: center;"><b>Trí tuệ nhân tạo và ứng dụng</b> </div>
+    <div style="font-family:Tahoma; font-size: 22px; text-align: center;"><b>Trí tuệ nhân tạo và ứng dụng</b></div>
     <div style="height: 10px;"></div>
-    <div style="font-family:Tahoma; font-size: 15px; text-align: center; height: 40px">Đề tài: Phân tích sms sentimental
+    <div style="font-family:Tahoma; font-size: 15px; text-align: center; height: 40px">Đề tài: Phân tích comment spam
     </div>
 
     <div class="row" style="font-family:Tahoma; font-size: 12px;">
@@ -141,48 +137,45 @@ input[type=text]:focus {
         <div class="column1">
             <div style="height: 20px">Phạm Doãn Tĩnh</div>
             <div style="height: 20px">Ngô Văn Minh</div>
+            <div style="height: 20px">Tùng</div>
+            <div style="height: 20px">Mạnh</div>
+            <div style="height: 20px">Hải</div>
+            <div style="height: 20px">Hùng</div>
             <div style="height: 20px"></div>
             <div style="height: 20px"></div>
             <div style="height: 20px"></div>
-        
         </div>
-    </div>
 
 
+        <div class="row" style="font-family:Tahoma;">
+            <div class="column">
+                <div style="text-align: center; font-size: 15px;"><b>Input</b></div>
+                <div style="vertical-align: middle;">
+                    <form action="/result" method="POST">
+                        <div style="height: 20px"></div>
+                        <div style="text-align: justify; font-size: 12px">Nhập bình luận của bạn vào ô bên dưới:</div>
+                        <div style="height: 10px"></div>
+                        <input type="text" placeholder="Bình luận..." id="cmt" name="cmt">
 
-
-
-
-    <div class="row" style="font-family:Tahoma;">
-        <div class="column">
-            <div style="text-align: center; font-size: 15px;"><b>Input</b></div>
-            <div style="vertical-align: middle;">
-                <form action="/result" method="POST">
-                    <div style="height: 20px"></div>
-                    <div style="text-align: justify; font-size: 12px">Nhập bình luận của bạn vào ô bên dưới:</div>
-                    <div style="height: 10px"></div>
-                    <input type="text" placeholder="Bình luận..." id="cmt" name="cmt">
-                    
-                    <div style="height: 68px"></div>
-                    <div style="align-items: center;">
-                        <button class="button" type="submit" value="Submit" style="vertical-align:middle; ">
+                        <div style="height: 68px"></div>
+                        <div style="align-items: center;">
+                            <button class="button" type="submit" value="Submit" style="vertical-align:middle; ">
                             <span>
                                 Kiểm tra kết quả
                             </span>
-                        </button>  
-                    </div>
-                    
-                </form>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="column">
+                <div style="text-align: center; font-family:Tahoma; font-size: 15px;"><b>Output</b></div>
             </div>
         </div>
-        <div class="column">
-            <div style="text-align: center; font-family:Tahoma; font-size: 15px;"><b>Output</b></div>
-        </div>
+
+
     </div>
-
-
-
-</div>
 
 </body>
 </html>
