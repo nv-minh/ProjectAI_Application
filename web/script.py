@@ -1,4 +1,3 @@
-
 import os
 import flask
 import pickle
@@ -8,10 +7,12 @@ import joblib
 
 app = Flask(__name__)
 
+
 @app.route('/')
 @app.route('/index')
 def index():
     return flask.render_template('index.html')
+
 
 def predict_spam_or_ham(input_string):
     # Load the trained model and CountVectorizer
@@ -23,6 +24,7 @@ def predict_spam_or_ham(input_string):
     prediction = naive_bayes.predict(preprocessed_input)
     return prediction[0]
 
+
 @app.route('/result', methods=['POST'])
 def result():
     if request.method == 'POST':
@@ -33,6 +35,7 @@ def result():
     else:
         label = "spam"
     return render_template("result.html", prediction=label, c=input_["cmt"])
+
 
 if __name__ == '__main__':
     app.run()
