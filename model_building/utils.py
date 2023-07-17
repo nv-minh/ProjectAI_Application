@@ -199,7 +199,7 @@ def vectorize(content, vector, df_below=3, df_above=1.0, length=1):
     len_sms = []
     list_corpus = []
     list_corpus_new = []
-    for line in content[:-1]:
+    for line in content:
         line = line.split()
         list_corpus.append(line)
         len_sms.append(len(line))

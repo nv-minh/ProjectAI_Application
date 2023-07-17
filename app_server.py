@@ -1,5 +1,7 @@
 import flask
 import pickle
+
+import joblib
 import pandas as pd
 from flask import Flask, request, jsonify
 
@@ -9,16 +11,16 @@ from model_building import utils
 app = Flask(__name__)
 
 
-def predict_spam_or_ham(data):
-    messages_raw = pd.read_excel('./message_modified_v1.2.xlsx', dtype={'msg': str})
-    list_content = messages_raw['msg'].to_list()
-    list_content.append(data['comment'])
-    list_content = utils.entity_tagging(list_content)
-    list_content_vec, list_len_sms, dictionary = utils.vectorize(list_content, 'bow')
-    load_clf = pickle.load(open('bow_svm_clf.pkl', 'rb'))
-    label_predict = load_clf.predict(list_content_vec[:])
-    return label_predict[-1]
-
+def predict_spam_or_ham(input_string):
+    # Load the trained model and CountVectorizer
+    naive_bayes = joblib.load('./naive_bayes_model.pkl')
+    count_vectorizer = joblib.load('./count_vectorizer.pkl')
+    print(input_string)
+    # Preprocess the input string
+    preprocessed_input = count_vectorizer.transform([input_string['comment']])
+    # Make the prediction
+    prediction = naive_bayes.predict(preprocessed_input)
+    return prediction[0]
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -29,6 +31,7 @@ def predict():
             label = "ham"
         else:
             label = "spam"
+        print(label)
         response = {'prediction': label}
         return jsonify(response)
 
